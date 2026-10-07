@@ -254,13 +254,22 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(20,40,29,.45)}
 }
 
 /* ---------- kikar photo band ---------- */
-.grove{position:relative;height:min(70vh,620px);min-height:420px;padding:0;overflow:hidden;display:flex;align-items:flex-end;color:#fff}
-.grove img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;object-position:30% 50%;transform:translateY(var(--py,0px)) scale(1.06);will-change:transform}
-.grove::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,29,21,0) 40%,rgba(14,29,21,.78) 100%)}
-.grove .txt{position:relative;z-index:1;padding-bottom:clamp(32px,5vw,56px)}
-.grove h2{color:#fff;margin-bottom:.4rem}
+.grove{background:linear-gradient(165deg,var(--forest) 0%,var(--forest-2) 100%);color:#eef0e6}
+.grove .wrap{display:grid;grid-template-columns:1fr .85fr 1fr;gap:clamp(1rem,2.5vw,1.6rem);align-items:stretch}
+.grove .txt{align-self:center;padding-right:clamp(0px,2vw,2rem)}
+.grove h2{color:#fff}
 .grove .kicker{color:#f3cd73}
-.grove p.cap{max-width:520px;color:#efe6cf}
+.grove p.cap{color:#d3dccd;font-size:1.05rem;margin-bottom:1.4rem}
+.grove ul{list-style:none;display:grid;gap:.6rem;font-size:.95rem;color:#d3dccd}
+.grove li::before{content:"✓";color:#f0c15a;font-weight:700;margin-right:.6rem}
+.grove figure{position:relative;margin:0;border-radius:16px;overflow:hidden;background:#244b34;box-shadow:0 24px 50px -28px rgba(0,0,0,.7)}
+.grove figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.grove figure:hover img{transform:scale(1.05)}
+.grove figcaption{position:absolute;left:12px;bottom:12px;padding:.3rem .75rem;border-radius:999px;background:rgba(20,40,29,.75);color:#f3cd73;font-size:.78rem;font-weight:600;letter-spacing:.04em}
+.grove .tall{min-height:520px}
+.grove .stack{display:grid;grid-template-rows:1fr 1fr;gap:clamp(1rem,2.5vw,1.6rem)}
+@media (max-width:900px){.grove .wrap{grid-template-columns:1fr 1fr}.grove .txt{grid-column:1/-1;padding:0}.grove .tall{min-height:420px}}
+@media (max-width:560px){.grove .wrap{grid-template-columns:1fr}.grove .tall{min-height:0;aspect-ratio:3/4}.grove .stack figure{aspect-ratio:3/2}}
 </style>
 </head>
 <body>
@@ -312,11 +321,18 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(20,40,29,.45)}
 <div class="ribbon" aria-label="Single ingredient, no additives, no preservatives, raw and minimally processed, FSSAI licensed, made in India"><div class="track"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Single Ingredient</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18"/></svg>No Additives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>No Preservatives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11z"/></svg>Raw &amp; Minimally Processed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/></svg>FSSAI Licensed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/></svg>Made in India</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a2 2 0 1 0 0 .01M7 11a2 2 0 1 0 0 .01M17 11a2 2 0 1 0 0 .01M9 16a2 2 0 1 0 0 .01M15 16a2 2 0 1 0 0 .01"/></svg>From Kikar Blossoms</li></ul><ul aria-hidden="true"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Single Ingredient</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18"/></svg>No Additives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>No Preservatives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11z"/></svg>Raw &amp; Minimally Processed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/></svg>FSSAI Licensed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/></svg>Made in India</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a2 2 0 1 0 0 .01M7 11a2 2 0 1 0 0 .01M17 11a2 2 0 1 0 0 .01M9 16a2 2 0 1 0 0 .01M15 16a2 2 0 1 0 0 .01"/></svg>From Kikar Blossoms</li></ul></div></div>
 
 <section class="grove" id="grove">
-  <img src="assets/kikar.webp" width="2000" height="880" alt="A Kikar tree in full bloom with round yellow flowers on a river bank at sunset, with honeybees flying around it" loading="lazy">
-  <div class="wrap txt">
-    <p class="kicker reveal">The Source</p>
-    <h2 class="reveal" style="--d:.1s">Where every drop begins</h2>
-    <p class="cap reveal" style="--d:.2s">Kikar trees bloom along the river banks. Our bees gather nectar from these golden flowers.</p>
+  <div class="wrap">
+    <div class="txt">
+      <p class="kicker reveal">The Source</p>
+      <h2 class="reveal" style="--d:.1s">Where every drop begins</h2>
+      <p class="cap reveal" style="--d:.2s">Kikar, also called Babool, grows wild along rivers and on dry land. In season its thorny branches fill with small golden flower balls, and our bees gather their nectar.</p>
+      <ul class="reveal" style="--d:.3s"><li>Golden pom-pom flowers</li><li>Feathery, fine leaves</li><li>Hardy, thorny riverside tree</li></ul>
+    </div>
+    <figure class="tall reveal" style="--d:.15s"><img src="assets/kikar-bee.jpg" width="924" height="2000" alt="A honeybee collecting nectar from round yellow Kikar flowers" loading="lazy" style="object-position:30% 58%"><figcaption>Bee on Kikar blossom</figcaption></figure>
+    <div class="stack">
+      <figure class="reveal" style="--d:.25s"><img src="assets/kikar-branch.jpg" width="960" height="640" alt="A Kikar branch with fine leaves and yellow flower balls" loading="lazy"><figcaption>Kikar flowers and leaves</figcaption></figure>
+      <figure class="reveal" style="--d:.35s"><img src="assets/kikar-tree.jpg" width="960" height="640" alt="Kikar tree branches covered with small yellow flowers" loading="lazy"><figcaption>Kikar tree in bloom</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -539,12 +555,6 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
   }
 }
 
-// ---------- kikar photo parallax ----------
-{
-  const g = document.getElementById("grove"), img = g.querySelector("img");
-  const par = () => { const r = g.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) img.style.setProperty("--py", ((r.top + r.height / 2 - innerHeight / 2) * -.12).toFixed(1) + "px"); };
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) { addEventListener("scroll", par, { passive: true }); par(); }
-}
 </script>
 </body>
 </html>
