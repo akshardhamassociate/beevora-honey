@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#1f3f2c">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<!-- ponytail: replace https://YOUR-DOMAIN (5 places below) with the live domain; WhatsApp/Facebook only show the preview for full https image URLs -->
+<!-- ponytail: replace https://YOUR-DOMAIN (5 places below) with the live site URL; WhatsApp/Facebook only show the preview for full https image URLs -->
 <link rel="canonical" href="https://YOUR-DOMAIN/">
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="Beevora">
@@ -472,7 +472,6 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(20,40,29,.45)}
   </div>
 </footer>
 
-<canvas id="bees" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:15"></canvas>
 <a class="float" data-wa="Hello, I would like to know more about Beevora Kikar Honey." href="#enquire" aria-label="Chat on WhatsApp"><svg aria-hidden="true"><use href="#wa"/></svg></a>
 
 <script>
@@ -538,43 +537,6 @@ if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
     }
     if (run) requestAnimationFrame(tick);
   }
-}
-
-// ---------- bees ----------
-// s = body half-length in px, ang = heading (head points to -x before rotation)
-function drawBee(ctx, x, y, s, ang, t, ph) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(ang);
-  const flap = Math.abs(Math.sin(t * 40 + ph));
-  ctx.fillStyle = "rgba(255,255,255,.6)";
-  ctx.beginPath(); ctx.ellipse(-s * .1, -s * .55, s * .55, s * .28 * (.3 + flap), -.3, 0, 6.28); ctx.fill();
-  ctx.beginPath(); ctx.ellipse(s * .2, -s * .5, s * .45, s * .24 * (.3 + flap), .3, 0, 6.28); ctx.fill();
-  ctx.fillStyle = "#e9a91c"; ctx.beginPath(); ctx.ellipse(0, 0, s * .8, s * .45, 0, 0, 6.28); ctx.fill();
-  ctx.fillStyle = "#2a1a08";
-  for (const o of [-.25, .1, .45]) { ctx.beginPath(); ctx.ellipse(s * o, 0, s * .1, s * .42, 0, 0, 6.28); ctx.fill(); }
-  ctx.beginPath(); ctx.arc(-s * .82, 0, s * .3, 0, 6.28); ctx.fill();
-  ctx.restore();
-}
-
-// site-wide bees: a fixed, click-through canvas above the page; each bee wanders on layered sine paths
-// and varies in size/opacity to fake depth.
-if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const cv = document.getElementById("bees"), ctx = cv.getContext("2d");
-  let W, H;
-  const size = () => { const d = Math.min(devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0); };
-  size(); addEventListener("resize", size);
-  const n = innerWidth < 700 ? 5 : 9;
-  const B = Array.from({ length: n }, (_, i) => ({ a: Math.random() * 99, b: Math.random() * 99, sx: .05 + Math.random() * .07, sy: .06 + Math.random() * .08, ph: Math.random() * 6.28, d: .45 + (i / n) * .75 }));
-  const pos = (q, t) => [W * (.5 + .42 * Math.sin(q.a + t * q.sx) + .06 * Math.sin(q.b + t * q.sx * 5.3)), H * (.5 + .4 * Math.sin(q.b + t * q.sy) + .06 * Math.cos(q.a + t * q.sy * 4.7))];
-  (function frame(ms) {
-    const t = ms / 1000;
-    ctx.clearRect(0, 0, W, H);
-    for (const q of B) {
-      const [x, y] = pos(q, t), [nx, ny] = pos(q, t + .05), z = q.d + .2 * Math.sin(t * .3 + q.ph);
-      ctx.globalAlpha = .55 + .4 * z;
-      drawBee(ctx, x, y + 3 * Math.sin(t * 9 + q.ph), 9 * z + 3, Math.atan2(ny - y, nx - x) + Math.PI, t, q.ph);
-    }
-    requestAnimationFrame(frame);
-  })(0);
 }
 
 // ---------- kikar photo parallax ----------
