@@ -92,17 +92,28 @@ header .btn{padding:.6rem 1rem;font-size:.9rem}
   header .btn span{display:none}
 }
 
-/* hero */
-.hero{padding:clamp(48px,7vw,88px) 0}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
-.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);margin-bottom:1.1rem}
-.hero h1 span{color:var(--honey-dark)}
-.hero .lead{margin-bottom:1.8rem}
-.actions{display:flex;flex-wrap:wrap;gap:.8rem}
-.hero .photo{aspect-ratio:1/1}
-.points{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;margin-top:2rem;font-size:.9rem;color:var(--muted);list-style:none}
-.points li::before{content:"✓";color:var(--honey-dark);font-weight:700;margin-right:.45rem}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero .photo{aspect-ratio:1/1}}
+/* hero: product spotlight */
+.hero{padding:clamp(56px,7vw,96px) 0 clamp(40px,5vw,60px);background:radial-gradient(60% 70% at 50% 55%,#3a7350 0%,#24492f 55%,#17301f 100%);color:#eef0e6}
+.hero .ghost{position:absolute;left:0;right:0;top:clamp(16px,4vw,44px);text-align:center;font-family:var(--serif);font-weight:700;font-size:clamp(5rem,18vw,16rem);line-height:1;letter-spacing:.08em;color:rgba(255,255,255,.05);pointer-events:none;user-select:none}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
+.hero .kicker{color:#f0c15a}
+.hero h1{color:#fff;font-size:clamp(2.8rem,4.8vw,3.8rem);margin-bottom:1rem;white-space:nowrap}
+.hero .btn{border-radius:999px;padding:.95rem 1.6rem}
+.hero .lead{color:#d6dfd0;margin-bottom:1.8rem}
+.btn-gold{background:#f0c15a;color:#1f3f2c}.btn-gold:hover{background:#f6cf72}
+.hero .photo{aspect-ratio:1/1;border-radius:50%;border:3px solid #f0c15a;box-shadow:0 0 0 14px rgba(240,193,90,.12),0 40px 80px -30px rgba(0,0,0,.8)}
+.feats{display:grid;gap:.9rem}
+.feat{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(240,193,90,.3)}
+.feat i{display:grid;place-items:center;width:44px;height:44px;flex:none;border-radius:12px;background:#f0c15a;color:#1f3f2c}
+.feat svg{width:22px;height:22px}
+.feat b{display:block;color:#fff;font-size:1rem}
+.feat span{font-size:.9rem;color:#c9d3c3}
+.hero .wrap.sizes{display:flex;justify-content:center;flex-wrap:wrap;gap:.7rem;margin-top:clamp(2rem,4vw,3rem)}
+.sizes a{padding:.6rem 1.2rem;border-radius:999px;border:1px solid rgba(255,255,255,.3);color:#fff;text-decoration:none;font-weight:600;font-size:.9rem}
+.sizes a:hover{border-color:#f0c15a}
+.sizes a.on{background:#f0c15a;color:#1f3f2c;border-color:#f0c15a}
+@media (max-width:1024px){.hero .wrap{grid-template-columns:1fr 1fr}.feats{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:700px){.hero .wrap{grid-template-columns:1fr}.hero .art{order:-1;width:min(320px,82%);justify-self:center}.feats{grid-template-columns:1fr}}
 
 /* facts ribbon */
 .ribbon{background:linear-gradient(90deg,#d99a2b,#f0c15a 50%,#d99a2b);color:#1f3f2c;overflow:hidden;border-block:1px solid rgba(31,63,44,.15)}
@@ -166,13 +177,25 @@ dt{color:var(--muted)}dd{font-weight:500}
 @media (max-width:480px){dl{grid-template-columns:1fr;gap:.15rem}dd{margin-bottom:.6rem}}
 
 /* packs */
-.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.4rem}
-.pack{position:relative;background:var(--cream);border:1px solid var(--line);border-top:4px solid #e0b263;border-radius:12px;padding:1.8rem;display:flex;flex-direction:column}
-.pack.pop{background:linear-gradient(180deg,#fff8e8,var(--cream));border-color:#e0b263;box-shadow:0 20px 40px -26px rgba(154,101,18,.6)}
-.pack .tag{position:absolute;top:-13px;right:16px;background:var(--forest);color:#f3cd73;font-size:.72rem;font-weight:600;letter-spacing:.12em;padding:.3rem .75rem;border-radius:999px}
-.pack .w{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--green);line-height:1}
-.pack p{color:var(--muted);margin:.5rem 0 1.4rem;flex:1}
-@media (max-width:760px){.packs{grid-template-columns:1fr}}
+#packs{background:#efe6d2}
+.packs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem;margin-top:2.4rem;align-items:end}
+.pack{position:relative;background:#faf6ec;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.pack .img{height:220px;overflow:hidden}
+.pack .img img{width:100%;height:100%;object-fit:cover;object-position:55% 45%;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.pack:hover .img img{transform:scale(1.05)}
+.pack .body{display:flex;flex-direction:column;gap:.45rem;padding:1.4rem 1.6rem 1.6rem}
+.pack .row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.pack .w{font-family:var(--serif);font-size:2.5rem;font-weight:600;color:var(--green);line-height:1}
+.pack .price{font-size:1.1rem;font-weight:700;color:var(--ink)}
+.pack p{color:var(--muted);font-size:.93rem;margin-bottom:.8rem}
+.pack .btn{width:100%;border-radius:999px}
+.pack.pop{background:var(--forest);border-color:var(--forest);box-shadow:0 30px 60px -30px rgba(31,63,44,.7)}
+.pack.pop .img{height:280px}
+.pack.pop .w{color:#f3cd73}
+.pack.pop .price{color:#fff}
+.pack.pop p{color:#cfd8c9}
+.pack .tag{position:absolute;top:16px;right:16px;z-index:1;background:#f0c15a;color:#1f3f2c;font-size:.72rem;font-weight:700;letter-spacing:.1em;padding:.35rem .8rem;border-radius:999px}
+@media (max-width:860px){.packs{grid-template-columns:1fr;max-width:440px;margin-inline:auto}.pack.pop .img,.pack .img{height:240px}}
 
 /* faq */
 .faq{max-width:780px;margin-top:2rem}
@@ -224,8 +247,6 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(20,40,29,.45)}
 .js .photo.reveal{opacity:1;transform:none}
 .js .photo.reveal img{clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.7,0,.2,1)}
 .js .photo.reveal.in img{clip-path:inset(0)}
-.hero h1 span{background:linear-gradient(100deg,var(--honey-dark) 20%,#e6a63a 40%,var(--honey-dark) 60%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
-@keyframes shine{from{background-position:120% 0}to{background-position:-120% 0}}
 .drip{position:relative;height:46px;background:var(--cream);margin-top:-1px}
 .drip svg{position:absolute;inset:0;width:100%;height:100%}
 .drip .drop{transform-box:fill-box;transform-origin:top;animation:drip 4.5s cubic-bezier(.5,0,.6,1) infinite;animation-delay:var(--d,0s)}
@@ -250,7 +271,6 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(20,40,29,.45)}
   #pollen{display:none}
   .photo{transform:none!important}
   .js .photo.reveal img{clip-path:none}
-  .hero h1 span{color:var(--honey-dark)}
 }
 
 /* ---------- kikar photo band ---------- */
@@ -299,23 +319,28 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(20,40,29,.45)}
 <main id="top">
 <section class="hero">
   <canvas id="pollen" aria-hidden="true"></canvas>
+  <div class="ghost" aria-hidden="true">BEEVORA</div>
   <div class="wrap">
     <div>
-      <p class="kicker rise" style="--d:.1s">Pure by Nature · Goodness in Every Drop</p>
-      <h1 class="rise" style="--d:.25s">Raw honey from <span>Kikar blossoms</span></h1>
-      <p class="lead rise" style="--d:.4s">Beevora Kikar Honey is made by bees from the nectar of Kikar (Acacia) flowers in the forests of India. It is only filtered, never blended, so it keeps its natural richness, aroma and goodness.</p>
+      <p class="kicker rise" style="--d:.1s">Raw · Minimally Processed</p>
+      <h1 class="rise" style="--d:.25s">Kikar Honey</h1>
+      <p class="lead rise" style="--d:.4s">Gathered by bees from golden Kikar blossoms along the river. Filtered once, then sealed in the jar.</p>
       <div class="actions rise" style="--d:.55s">
-        <a class="btn btn-wa" data-wa="Hello, I would like to order Beevora Kikar Honey." href="#enquire"><svg aria-hidden="true"><use href="#wa"/></svg>Order on WhatsApp</a>
-        <a class="btn btn-line" href="#origin">Where it comes from</a>
+        <a class="btn btn-gold" data-wa="Hello, I would like to order Beevora Kikar Honey." href="#enquire"><svg aria-hidden="true"><use href="#wa"/></svg>Order on WhatsApp</a>
       </div>
-      <ul class="points rise" style="--d:.7s"><li>Raw honey</li><li>Minimally processed</li><li>Single ingredient</li></ul>
     </div>
     <div class="art rise" style="--d:.35s">
       <figure class="photo tilt" data-need="Photo needed: assets/hero.webp">
-        <img src="assets/hero.webp" width="1254" height="1254" alt="A jar of Beevora Kikar Honey on a rock beside a honeycomb, with bees, kikar flowers, mountains and a river behind" onerror="this.remove()">
+        <img src="assets/hero.webp" width="1254" height="1254" alt="A jar of Beevora Kikar Honey on a rock beside a honeycomb, with bees, flowers, mountains and a river behind" onerror="this.remove()">
       </figure>
     </div>
+    <div class="feats">
+      <div class="feat rise" style="--d:.5s"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i><div><b>Single ingredient</b><span>Natural Kikar Honey, nothing else</span></div></div>
+      <div class="feat rise" style="--d:.65s"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg></i><div><b>Lab tested</b><span>Test report shared on request</span></div></div>
+      <div class="feat rise" style="--d:.8s"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13M9 21v-7h6v7"/></svg></i><div><b>Direct from our apiary</b><span>Packed by Shri Ganesh Apiaries</span></div></div>
+    </div>
   </div>
+  <div class="wrap sizes rise" style="--d:.9s"><a href="#packs">400 g</a><a class="on" href="#packs">800 g · Most popular</a><a href="#packs">1000 g</a></div>
 </section>
 
 <div class="ribbon" aria-label="Single ingredient, no additives, no preservatives, raw and minimally processed, FSSAI licensed, made in India"><div class="track"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Single Ingredient</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18"/></svg>No Additives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>No Preservatives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11z"/></svg>Raw &amp; Minimally Processed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/></svg>FSSAI Licensed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/></svg>Made in India</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a2 2 0 1 0 0 .01M7 11a2 2 0 1 0 0 .01M17 11a2 2 0 1 0 0 .01M9 16a2 2 0 1 0 0 .01M15 16a2 2 0 1 0 0 .01"/></svg>From Kikar Blossoms</li></ul><ul aria-hidden="true"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Single Ingredient</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18"/></svg>No Additives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>No Preservatives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11z"/></svg>Raw &amp; Minimally Processed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/></svg>FSSAI Licensed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/></svg>Made in India</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a2 2 0 1 0 0 .01M7 11a2 2 0 1 0 0 .01M17 11a2 2 0 1 0 0 .01M9 16a2 2 0 1 0 0 .01M15 16a2 2 0 1 0 0 .01"/></svg>From Kikar Blossoms</li></ul></div></div>
@@ -426,15 +451,15 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(20,40,29,.45)}
   </div>
 </section>
 
-<section id="packs" class="alt">
+<section id="packs">
   <div class="wrap">
-    <p class="kicker reveal">Pack Sizes</p>
-    <h2 class="reveal" style="--d:.1s">Choose your pack</h2>
-    <p class="lead reveal" style="--d:.2s">Message us on WhatsApp for the current price and delivery charges to your city.</p>
+    <p class="kicker reveal">Choose Your Pack</p>
+    <h2 class="reveal" style="--d:.1s">Three sizes, one purity.</h2>
+    <p class="lead reveal" style="--d:.2s">Message us on WhatsApp for the current price and delivery to your city.</p>
     <div class="packs">
-      <div class="pack reveal" style="--d:0.12s"><div class="w">400 g</div><p>A good size to try it for the first time.</p><a class="btn btn-line" data-wa="Hello, I would like to order Beevora Kikar Honey 400 g. Please share the price and delivery details." href="#enquire">Enquire on WhatsApp</a></div>
-      <div class="pack pop reveal" style="--d:0.24s"><span class="tag">MOST POPULAR</span><div class="w">800 g</div><p>For a family's regular use.</p><a class="btn btn-wa" data-wa="Hello, I would like to order Beevora Kikar Honey 800 g. Please share the price and delivery details." href="#enquire"><svg aria-hidden="true"><use href="#wa"/></svg>Enquire on WhatsApp</a></div>
-      <div class="pack reveal" style="--d:0.36s"><div class="w">1000 g</div><p>For everyday use, all month long.</p><a class="btn btn-line" data-wa="Hello, I would like to order Beevora Kikar Honey 1000 g. Please share the price and delivery details." href="#enquire">Enquire on WhatsApp</a></div>
+      <div class="pack reveal"><div class="img"><img src="assets/hero.webp" width="1254" height="1254" alt="Beevora Kikar Honey jar" loading="lazy"></div><div class="body"><div class="row"><span class="w">400 g</span><span class="price">Price on WhatsApp</span></div><p>Try it first</p><a class="btn btn-line" data-wa="Hello, I would like to order Beevora Kikar Honey 400 g. Please share the price and delivery details." href="#enquire">Order on WhatsApp</a></div></div>
+      <div class="pack pop reveal"><span class="tag">MOST POPULAR</span><div class="img"><img src="assets/hero.webp" width="1254" height="1254" alt="Beevora Kikar Honey jar" loading="lazy"></div><div class="body"><div class="row"><span class="w">800 g</span><span class="price">Price on WhatsApp</span></div><p>Family pack, our most chosen size</p><a class="btn btn-gold" data-wa="Hello, I would like to order Beevora Kikar Honey 800 g. Please share the price and delivery details." href="#enquire"><svg aria-hidden="true"><use href="#wa"/></svg>Order on WhatsApp</a></div></div>
+      <div class="pack reveal"><div class="img"><img src="assets/hero.webp" width="1254" height="1254" alt="Beevora Kikar Honey jar" loading="lazy"></div><div class="body"><div class="row"><span class="w">1000 g</span><span class="price">Price on WhatsApp</span></div><p>Best value for daily use</p><a class="btn btn-line" data-wa="Hello, I would like to order Beevora Kikar Honey 1000 g. Please share the price and delivery details." href="#enquire">Order on WhatsApp</a></div></div>
     </div>
   </div>
 </section>
