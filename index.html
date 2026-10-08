@@ -8,14 +8,14 @@
 <meta name="theme-color" content="#1f3f2c">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<!-- ponytail: replace https://YOUR-DOMAIN (5 places below) with the live site URL; WhatsApp/Facebook only show the preview for full https image URLs -->
-<link rel="canonical" href="https://YOUR-DOMAIN/">
+<!-- ponytail: live URL below in 5 places; change all of them if the site moves to a custom domain -->
+<link rel="canonical" href="https://akshardhamassociate.github.io/beevora-honey/">
 <meta property="og:type" content="product">
 <meta property="og:site_name" content="Beevora">
 <meta property="og:title" content="Beevora Kikar Honey: Pure by Nature, Goodness in Every Drop">
 <meta property="og:description" content="Raw, minimally processed honey from the nectar of Kikar (Babool) blossoms. Single ingredient, no additives, no preservatives. Order on WhatsApp.">
-<meta property="og:url" content="https://YOUR-DOMAIN/">
-<meta property="og:image" content="https://YOUR-DOMAIN/assets/og-image.jpg">
+<meta property="og:url" content="https://akshardhamassociate.github.io/beevora-honey/">
+<meta property="og:image" content="https://akshardhamassociate.github.io/beevora-honey/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Beevora Kikar Honey jar on a rock beside a honeycomb">
@@ -27,7 +27,7 @@
   "name": "Beevora Kikar Honey",
   "alternateName": ["Beevora Babool Honey", "Beevora Acacia Honey"],
   "description": "Raw, minimally processed honey from the nectar of Kikar (Acacia) flowers in the forests of India. Single ingredient: Natural Kikar Honey. No additives, no preservatives.",
-  "image": ["https://YOUR-DOMAIN/assets/og-image.jpg"],
+  "image": ["https://akshardhamassociate.github.io/beevora-honey/assets/og-image.jpg"],
   "brand": {"@type": "Brand", "name": "Beevora"},
   "category": "Food & Beverages > Honey",
   "countryOfOrigin": "IN",
@@ -41,12 +41,12 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --green:#1f3f2c; --forest:#2d5c40; --forest-2:#244b34; --cream:#faf6ec; --paper:#fff; --sand:#efe6d2;
   --honey:#c8861d; --honey-dark:#9a6512; --ink:#1c1f1a; --muted:#5f655c; --line:#e2d8c2;
-  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif;
+  --serif:"Playfair Display",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;font-size:16.5px}
@@ -54,7 +54,7 @@ img{display:block;max-width:100%}
 a{color:inherit}
 .wrap{width:min(1160px,100% - 32px);margin-inline:auto}
 :focus-visible{outline:2px solid var(--honey);outline-offset:3px}
-h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;color:var(--green)}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.15;letter-spacing:-.01em;color:var(--green)}
 h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1rem}
 h3{font-size:1.35rem;margin-bottom:.35rem}
 .kicker{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--honey-dark);margin-bottom:.8rem}
@@ -97,7 +97,7 @@ header .btn{padding:.6rem 1rem;font-size:.9rem}
 .hero .ghost{position:absolute;left:0;right:0;top:clamp(16px,4vw,44px);text-align:center;font-family:var(--serif);font-weight:700;font-size:clamp(5rem,18vw,16rem);line-height:1;letter-spacing:.08em;color:rgba(255,255,255,.05);pointer-events:none;user-select:none}
 .hero .wrap{display:grid;grid-template-columns:1fr 1.05fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
 .hero .kicker{color:#f0c15a}
-.hero h1{color:#fff;font-size:clamp(2.8rem,4.8vw,3.8rem);margin-bottom:1rem;white-space:nowrap}
+.hero h1{color:#fff;font-size:clamp(2.6rem,4.2vw,3.4rem);margin-bottom:1rem;white-space:nowrap}
 .hero .btn{border-radius:999px;padding:.95rem 1.6rem}
 .hero .lead{color:#d6dfd0;margin-bottom:1.8rem}
 .btn-gold{background:#f0c15a;color:#1f3f2c}.btn-gold:hover{background:#f6cf72}
@@ -232,7 +232,6 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(20,40,29,.45)}
 .js .reveal{opacity:0;transform:translateY(32px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .js .reveal.in{opacity:1;transform:none}
 .hero{position:relative;overflow:hidden}
-#pollen{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .hero .wrap{position:relative}
 .js .hero .rise{opacity:0;animation:rise 1s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0s)}
 @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
@@ -268,7 +267,6 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(20,40,29,.45)}
   *,*::before,*::after{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
   .js .reveal,.js .hero .rise{opacity:1;transform:none}
-  #pollen{display:none}
   .photo{transform:none!important}
   .js .photo.reveal img{clip-path:none}
 }
@@ -318,7 +316,6 @@ header.scrolled{box-shadow:0 8px 24px -16px rgba(20,40,29,.45)}
 
 <main id="top">
 <section class="hero">
-  <canvas id="pollen" aria-hidden="true"></canvas>
   <div class="ghost" aria-hidden="true">BEEVORA</div>
   <div class="wrap">
     <div>
@@ -560,25 +557,6 @@ if (matchMedia("(hover:hover) and (prefers-reduced-motion:no-preference)").match
   el.addEventListener("pointerleave", () => { el.style.setProperty("--rx", "0deg"); el.style.setProperty("--ry", "0deg"); });
 });
 
-// ponytail: ~40 drifting pollen specks on one canvas; paused when the hero is off-screen.
-const cv = document.getElementById("pollen");
-if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const ctx = cv.getContext("2d"); let W, H, run = true;
-  const size = () => { const d = devicePixelRatio || 1; W = cv.offsetWidth; H = cv.offsetHeight; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0); };
-  size(); addEventListener("resize", size);
-  const P = Array.from({ length: 40 }, () => ({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 2.2 + .6, v: Math.random() * .3 + .1, s: Math.random() * 6.28, a: Math.random() * .5 + .2 }));
-  new IntersectionObserver(([e]) => { run = e.isIntersecting; if (run) requestAnimationFrame(tick); }).observe(cv);
-  function tick(t) {
-    ctx.clearRect(0, 0, W, H);
-    for (const p of P) {
-      p.y -= p.v; p.x += Math.sin(t / 2000 + p.s) * .3;
-      if (p.y < -5) { p.y = H + 5; p.x = Math.random() * W; }
-      ctx.globalAlpha = p.a * (.6 + .4 * Math.sin(t / 900 + p.s));
-      ctx.fillStyle = "#d39a2e"; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.28); ctx.fill();
-    }
-    if (run) requestAnimationFrame(tick);
-  }
-}
 
 </script>
 </body>
