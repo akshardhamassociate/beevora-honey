@@ -37,7 +37,7 @@
     "name": "Shri Ganesh Apiaries and Honey Farm",
     "address": {"@type": "PostalAddress", "streetAddress": "Village Mursan, Tehsil Hathras", "addressLocality": "Hathras", "addressRegion": "Uttar Pradesh", "postalCode": "204101", "addressCountry": "IN"}
   },
-  "size": ["400 g", "800 g", "1050 g"]
+  "size": ["400 g", "800 g", "1000 g"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,6 +80,10 @@ section{padding:clamp(64px,8vw,104px) 0}
 header{position:sticky;top:0;z-index:20;background:rgba(250,246,236,.96);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem}
 .logo{font-family:var(--serif);font-weight:700;font-size:1.6rem;letter-spacing:.12em;color:var(--green);text-decoration:none;line-height:1.1}
+.logo{display:inline-flex;align-items:center;gap:.65rem}
+.logo .mark{width:44px;height:44px;flex:none;border-radius:12px;box-shadow:0 6px 16px -8px rgba(31,63,44,.6);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.logo:hover .mark{transform:rotate(-8deg) scale(1.05)}
+footer .logo .mark{box-shadow:0 0 0 1px rgba(240,193,90,.35)}
 .logo small{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;color:var(--honey-dark);font-weight:600}
 nav ul{display:flex;gap:1.7rem;list-style:none;font-size:.93rem}
 nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--green)}
@@ -375,15 +379,19 @@ main img{cursor:zoom-in}
 .agrid figcaption b{display:block;font-family:var(--serif);color:#f3cd73;font-size:1.15rem;margin-bottom:.15rem}
 @media (max-width:900px){.agrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:200px}}
 @media (max-width:600px){.agrid{grid-auto-rows:150px;gap:.6rem;margin-top:1.4rem}.agrid figure{border-radius:12px}.agrid figcaption{padding:1.6rem .7rem .6rem;font-size:.72rem}.agrid figcaption b{font-size:.92rem}.agrid .big figcaption,.agrid .band figcaption{font-size:.8rem}.apiary .head{gap:.4rem}.agrid figure:not(.big):not(.band) figcaption{font-size:0}.agrid figure:not(.big):not(.band) figcaption b{margin:0}}
+
+/* touch targets: at least 44px tall on every tap target */
+header .btn,.sizes a{min-height:44px;display:inline-flex;align-items:center}
+.menu{min-height:44px;min-width:44px}
 </style>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 64 64"><defs><clipPath id="bvBody"><ellipse cx="32" cy="35.5" rx="6.2" ry="8.6"/></clipPath></defs><rect width="64" height="64" rx="16" fill="#1f3f2c"/><path d="M32 11l17 9.8v19.6L32 50.2 15 40.4V20.8z" fill="none" stroke="#f0c15a" stroke-width="3" stroke-linejoin="round"/><g fill="#fff6dc" fill-opacity=".92" stroke="#f0c15a" stroke-width="1"><ellipse cx="25.6" cy="27.6" rx="6.4" ry="3.6" transform="rotate(-28 25.6 27.6)"/><ellipse cx="38.4" cy="27.6" rx="6.4" ry="3.6" transform="rotate(28 38.4 27.6)"/></g><ellipse cx="32" cy="35.5" rx="6.2" ry="8.6" fill="#f0c15a"/><g clip-path="url(#bvBody)" fill="#1f3f2c"><rect x="24" y="32" width="16" height="2.4"/><rect x="24" y="37" width="16" height="2.4"/><rect x="24" y="42" width="16" height="2.4"/></g><path d="M32 44v2.8" stroke="#f0c15a" stroke-width="1.6" stroke-linecap="round"/><circle cx="32" cy="24.6" r="3.6" fill="#f0c15a"/><path d="M30.6 21.6c-.8-1.8-2-2.6-3.2-2.8M33.4 21.6c.8-1.8 2-2.6 3.2-2.8" stroke="#f0c15a" stroke-width="1.2" stroke-linecap="round" fill="none"/><path d="M32 11c-2.6-3.4-6.6-4.4-9.6-3.6 1.4 3.2 5.2 5.2 9.6 3.6zM32 11c2.6-3.4 6.6-4.4 9.6-3.6-1.4 3.2-5.2 5.2-9.6 3.6z" fill="#7fb069"/></symbol><symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></symbol></svg>
 
 <header>
   <div class="wrap">
-    <a href="#top" class="logo">BEEVORA<small>KIKAR HONEY</small></a>
+    <a href="#top" class="logo" aria-label="Beevora Kikar Honey, back to top"><svg class="mark" aria-hidden="true"><use href="#mark"/></svg><span>BEEVORA<small>KIKAR HONEY</small></span></a>
     <nav aria-label="Main">
       <ul id="menu">
         <li><a href="#origin">Origin</a></li>
@@ -426,7 +434,7 @@ main img{cursor:zoom-in}
       <div class="feat rise" style="--d:.8s"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13M9 21v-7h6v7"/></svg></i><div><b>Direct from our apiary</b><span>Packed by Shri Ganesh Apiaries</span></div></div>
     </div>
   </div>
-  <div class="wrap sizes rise" style="--d:.9s"><a href="#packs">400 g</a><a class="on" href="#packs">800 g · Most popular</a><a href="#packs">1050 g</a></div>
+  <div class="wrap sizes rise" style="--d:.9s"><a href="#packs">400 g</a><a class="on" href="#packs">800 g · Most popular</a><a href="#packs">1000 g</a></div>
 </section>
 
 <div class="ribbon" aria-label="Single ingredient, no additives, no preservatives, raw and minimally processed, FSSAI licensed, made in India"><div class="track"><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Single Ingredient</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18"/></svg>No Additives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>No Preservatives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11z"/></svg>Raw &amp; Minimally Processed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/></svg>FSSAI Licensed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/></svg>Made in India</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a2 2 0 1 0 0 .01M7 11a2 2 0 1 0 0 .01M17 11a2 2 0 1 0 0 .01M9 16a2 2 0 1 0 0 .01M15 16a2 2 0 1 0 0 .01"/></svg>From Kikar Blossoms</li></ul><ul aria-hidden="true"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>Single Ingredient</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18"/></svg>No Additives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/></svg>No Preservatives</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11z"/></svg>Raw &amp; Minimally Processed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/></svg>FSSAI Licensed</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/></svg>Made in India</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a2 2 0 1 0 0 .01M7 11a2 2 0 1 0 0 .01M17 11a2 2 0 1 0 0 .01M9 16a2 2 0 1 0 0 .01M15 16a2 2 0 1 0 0 .01"/></svg>From Kikar Blossoms</li></ul></div></div>
@@ -476,10 +484,10 @@ main img{cursor:zoom-in}
       <p class="lead reveal" style="--d:.2s">Every jar of Beevora comes from our own hives at Shri Ganesh Apiaries and Honey Farm. Here is how the honey is cared for, from bee box to bucket.</p>
     </div>
     <div class="agrid">
-      <figure class="big reveal" style="--d:0.1s"><img src="assets/apiary-beekeeper.jpg" srcset="assets/apiary-beekeeper-800.webp 800w, assets/apiary-beekeeper.jpg 1448w" sizes="(max-width:600px) 100vw, 600px" decoding="async" width="1448" height="1086" alt="A beekeeper in a bee veil holding a hive frame covered with bees, with rows of bee boxes behind him" loading="lazy"><figcaption><b>Our beekeeper at work</b>Checking a hive frame full of bees and fresh honey in the open fields.</figcaption></figure>
-      <figure class="tall reveal" style="--d:0.2s"><img src="assets/apiary-colony.webp" srcset="assets/apiary-colony-800.webp 800w, assets/apiary-colony.webp 1086w" sizes="(max-width:600px) 260px, 600px" decoding="async" width="1086" height="1448" alt="A dense cluster of honeybees inside a hive" loading="lazy"><figcaption><b>Healthy colonies</b>Thousands of worker bees cluster together inside one of our hives.</figcaption></figure>
+      <figure class="big reveal" style="--d:0.1s"><img src="assets/beekeeper-farm.webp" srcset="assets/beekeeper-farm-800.webp 800w, assets/beekeeper-farm.webp 1086w" sizes="(max-width:600px) 100vw, 600px" decoding="async" style="object-position:50% 0%" width="1086" height="1448" alt="Our beekeeper in a bee veil holding a hive frame covered with bees, with rows of bee boxes and a mustard field behind" loading="lazy"><figcaption><b>Our beekeeper at work</b>Checking a hive frame full of bees and fresh honey at our apiary.</figcaption></figure>
+      <figure class="tall reveal" style="--d:0.2s"><img src="assets/harvest-farm.webp" srcset="assets/harvest-farm-800.webp 800w, assets/harvest-farm.webp 1086w" sizes="(max-width:600px) 260px, 600px" decoding="async" style="object-position:50% 55%" width="1086" height="1448" alt="Our two beekeepers uncapping honeycomb frames beside a honey extractor, under a protective net at the apiary" loading="lazy"><figcaption><b>Harvest day</b>Our team slices the wax caps off ripe frames, then spins the honey out in the extractor.</figcaption></figure>
       <figure class="reveal" style="--d:0.25s"><img src="assets/apiary-hives.webp" srcset="assets/apiary-hives-800.webp 800w, assets/apiary-hives.webp 1448w" sizes="(max-width:600px) 260px, 600px" decoding="async" width="1448" height="1086" alt="Rows of white bee boxes under green trees in an open field" loading="lazy"><figcaption><b>Hives among the trees</b>Rows of bee boxes are set out under the trees during the flowering season.</figcaption></figure>
-      <figure class="reveal" style="--d:0.3s"><img src="assets/apiary-harvest.jpg" srcset="assets/apiary-harvest-800.webp 800w, assets/apiary-harvest.jpg 1448w" sizes="(max-width:600px) 260px, 600px" decoding="async" width="1448" height="1086" alt="Two beekeepers uncapping honeycomb frames next to a honey extractor under a protective net" loading="lazy"><figcaption><b>Harvest day</b>Wax caps are sliced off ripe frames before the honey is spun out in the extractor.</figcaption></figure>
+      <figure class="reveal" style="--d:0.3s"><img src="assets/apiary-colony.webp" srcset="assets/apiary-colony-800.webp 800w, assets/apiary-colony.webp 1086w" sizes="(max-width:600px) 260px, 600px" decoding="async" width="1086" height="1448" alt="A dense cluster of honeybees inside a hive" loading="lazy"><figcaption><b>Healthy colonies</b>Thousands of worker bees cluster together inside one of our hives.</figcaption></figure>
       <figure class="band reveal" style="--d:0.35s"><img src="assets/apiary-storage.webp" srcset="assets/apiary-storage-800.webp 800w, assets/apiary-storage.webp 1447w" sizes="(max-width:600px) 100vw, 1200px" decoding="async" style="object-position:50% 45%" width="1447" height="1087" alt="Rows of sealed white honey buckets stored in a clean room" loading="lazy"><figcaption><b>Stored with care</b>Filtered honey rests in sealed food-grade containers before it is packed into jars.</figcaption></figure>
     </div>
   </div>
@@ -564,7 +572,7 @@ main img{cursor:zoom-in}
     <div class="packs">
       <div class="pack reveal"><div class="img"><img src="assets/hero.webp" srcset="assets/hero-800.webp 800w, assets/hero.webp 1254w" sizes="(max-width:600px) 260px, 600px" decoding="async" width="1254" height="1254" alt="Beevora Kikar Honey jar" loading="lazy"></div><div class="body"><div class="row"><span class="w">400 g</span><span class="price">Price on WhatsApp</span></div><p>Try it first</p><a class="btn btn-line" data-wa="Hello, I would like to order Beevora Kikar Honey 400 g. Please share the price and delivery details." href="#enquire">Order on WhatsApp</a></div></div>
       <div class="pack pop reveal"><span class="tag">MOST POPULAR</span><div class="img"><img src="assets/hero.webp" srcset="assets/hero-800.webp 800w, assets/hero.webp 1254w" sizes="(max-width:600px) 260px, 600px" decoding="async" width="1254" height="1254" alt="Beevora Kikar Honey jar" loading="lazy"></div><div class="body"><div class="row"><span class="w">800 g</span><span class="price">Price on WhatsApp</span></div><p>Family pack, our most chosen size</p><a class="btn btn-gold" data-wa="Hello, I would like to order Beevora Kikar Honey 800 g. Please share the price and delivery details." href="#enquire"><svg aria-hidden="true"><use href="#wa"/></svg>Order on WhatsApp</a></div></div>
-      <div class="pack reveal"><div class="img"><img src="assets/hero.webp" srcset="assets/hero-800.webp 800w, assets/hero.webp 1254w" sizes="(max-width:600px) 260px, 600px" decoding="async" width="1254" height="1254" alt="Beevora Kikar Honey jar" loading="lazy"></div><div class="body"><div class="row"><span class="w">1050 g</span><span class="price">Price on WhatsApp</span></div><p>Best value for daily use</p><a class="btn btn-line" data-wa="Hello, I would like to order Beevora Kikar Honey 1050 g. Please share the price and delivery details." href="#enquire">Order on WhatsApp</a></div></div>
+      <div class="pack reveal"><div class="img"><img src="assets/hero.webp" srcset="assets/hero-800.webp 800w, assets/hero.webp 1254w" sizes="(max-width:600px) 260px, 600px" decoding="async" width="1254" height="1254" alt="Beevora Kikar Honey jar" loading="lazy"></div><div class="body"><div class="row"><span class="w">1000 g</span><span class="price">Price on WhatsApp</span></div><p>Best value for daily use</p><a class="btn btn-line" data-wa="Hello, I would like to order Beevora Kikar Honey 1000 g. Please share the price and delivery details." href="#enquire">Order on WhatsApp</a></div></div>
     </div>
   </div>
 </section>
@@ -598,7 +606,7 @@ main img{cursor:zoom-in}
         <label>City<input name="city" required autocomplete="address-level2"></label>
       </div>
       <div class="row">
-        <label>Pack size<select name="size"><option>400 g</option><option selected>800 g</option><option>1050 g</option></select></label>
+        <label>Pack size<select name="size"><option>400 g</option><option selected>800 g</option><option>1000 g</option></select></label>
         <label>Quantity<input name="qty" type="number" min="1" max="99" value="1" required></label>
       </div>
       <label>Message (optional)<textarea name="msg" rows="3"></textarea></label>
@@ -611,7 +619,7 @@ main img{cursor:zoom-in}
 <footer>
   <div class="wrap">
     <div class="cols">
-      <div><a href="#top" class="logo">BEEVORA</a><p style="margin-top:.6rem">Kikar Honey · Raw Honey · Minimally Processed.<br>Goodness of Honey for a Healthier Tomorrow.</p></div>
+      <div><a href="#top" class="logo"><svg class="mark" aria-hidden="true"><use href="#mark"/></svg><span>BEEVORA</span></a><p style="margin-top:.6rem">Kikar Honey · Raw Honey · Minimally Processed.<br>Goodness of Honey for a Healthier Tomorrow.</p></div>
       <div><h4>PACKED &amp; MARKETED BY</h4><p>Shri Ganesh Apiaries and Honey Farm<br>Village Mursan, Tehsil Hathras,<br>District Hathras, Uttar Pradesh 204101</p></div>
     </div>
     <div class="bottom"><span>© <span id="yr">2026</span> Beevora · Made in India · FSSAI Lic. No. 22226097000245</span><span>Not a medicine, just traditional practice.</span></div>
